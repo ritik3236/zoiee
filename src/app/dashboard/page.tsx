@@ -38,7 +38,7 @@ export default function DashboardPage() {
           <span className="w-3.5 h-3.5 rounded-full bg-black"></span> Welcome back, Olivia!
         </h1>
         <p className="text-neutral-500 font-mono uppercase text-[10px] tracking-wider font-bold">
-          Zoiee global treasury console: active and operational
+          Zoiee global HR console: active and operational
         </p>
       </div>
 

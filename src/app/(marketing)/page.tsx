@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { 
   ArrowRight, 
@@ -28,7 +28,9 @@ import {
   PlusCircle,
   HelpCircle,
   Menu,
-  ChevronDown
+  ChevronDown,
+  Laptop,
+  Heart
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -101,51 +103,51 @@ export default function MarketingHomePage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-neutral-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="text-[10px] font-black uppercase tracking-widest text-neutral-600 font-mono">
-                Now Live: Global Contractors V2
+                Now Live: Global HR Directory V2
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-neutral-900 font-logo">
               Work Intelligently.<br />
               <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-500 bg-clip-text text-transparent">
-                Pay Independently.
+                Hire Globally.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-medium max-w-xl">
-              The automated contractor payments and tax compliance system built for global remote teams. Dispatch funds, manage local W-8/W-9 requirements, and ship work devices instantly.
+              The automated contractor onboarding, local compliance, and global payroll platform built for modern remote teams. Hire, verify tax forms, and distribute hardware devices instantly.
             </p>
 
             {/* Checklist */}
             <div className="space-y-3.5 text-sm font-semibold text-neutral-700">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-neutral-950 shrink-0" />
-                <span>Zero FX markups on local currency contractor payouts</span>
+                <span>Localized contractor agreements valid in 120+ countries</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-neutral-950 shrink-0" />
-                <span>Auto-generated 1099-NEC & local country tax withholding</span>
+                <span>Auto-collection of W-8/W-9 tax forms and localized filings</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-neutral-950 shrink-0" />
-                <span>Compliant agreements and NDAs local to 120+ regions</span>
+                <span>Integrated equipment shipping (MacBooks, phones) & MDM setup</span>
               </div>
             </div>
 
             {/* Hero CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link href="/contact" className="px-8 py-4 bg-black hover:bg-neutral-900 text-white font-bold rounded-full shadow-md text-sm text-center transition-all">
-                Get Started
+                Request Demo
               </Link>
               <Link href="/pricing" className="px-8 py-4 bg-white border border-neutral-200 hover:border-neutral-850 hover:bg-neutral-50 text-neutral-800 font-bold rounded-full text-sm text-center transition-all shadow-sm">
-                See Pricing & Plans
+                View Plans & Pricing
               </Link>
             </div>
 
             {/* Trust badge */}
-            <div className="pt-6 flex items-center gap-4 text-xs font-semibold text-neutral-400 border-t border-neutral-200/60 max-w-lg">
-              <span className="uppercase tracking-widest text-[9px] font-bold font-mono bg-neutral-150 px-2 py-0.5 rounded-md text-neutral-500">TRUSTED</span>
-              <span>Onboarding 12,000+ global contractors monthly across tech and logistics.</span>
+            <div className="pt-6 flex items-center gap-4 text-xs font-semibold text-neutral-450 border-t border-neutral-200/60 max-w-lg">
+              <span className="uppercase tracking-widest text-[9px] font-bold font-mono bg-neutral-150 px-2 py-0.5 rounded-md text-neutral-500">ZOIEE HR</span>
+              <span>Powering compliant contractor directory scaling and benefits worldwide.</span>
             </div>
           </div>
 
@@ -157,71 +159,64 @@ export default function MarketingHomePage() {
             
             <div className="relative w-full max-w-[380px] p-6 bg-white/70 backdrop-blur-md rounded-3xl border border-neutral-200/60 shadow-[0_20px_50px_rgba(0,0,0,0.04)] space-y-6">
               
-              {/* Card 1: Total Payroll Dispatched */}
+              {/* Card 1: Active Hires */}
               <div className="bg-white p-5 rounded-2xl border border-neutral-200/60 shadow-sm relative overflow-hidden group hover:border-neutral-900 transition-colors">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Total Dispatched</span>
+                  <span className="text-[10px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Active Hires</span>
                   <span className="text-emerald-600 bg-emerald-50 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
                     <TrendingUp className="w-3 h-3" /> +12.4%
                   </span>
                 </div>
                 <div className="mt-3 flex items-baseline gap-2">
-                  <h3 className="text-3xl font-extrabold text-neutral-900 tracking-tight font-logo">$44,089</h3>
-                  <span className="text-xs text-neutral-500 font-medium">USD / Month</span>
+                  <h3 className="text-3xl font-extrabold text-neutral-900 tracking-tight font-logo">124</h3>
+                  <span className="text-xs text-neutral-500 font-medium">Contractors</span>
                 </div>
-                <p className="mt-2 text-xs text-neutral-450 font-medium">Auto-approved payroll routing to international contractors.</p>
+                <p className="mt-2 text-xs text-neutral-450 font-medium">Verified W-8/W-9 directory members onboarded.</p>
               </div>
 
-              {/* Card 2: Wallet Card (Pink/Blue Gradient) */}
+              {/* Card 2: Equipment Logistics Card */}
               <div className="bg-gradient-to-tr from-neutral-900 to-neutral-850 p-6 rounded-2xl text-white shadow-md relative overflow-hidden group hover:scale-[1.01] transition-transform">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full translate-x-8 -translate-y-8" />
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Zoiee Smart Card</span>
-                    <h4 className="text-xs font-bold text-neutral-200 mt-0.5">Alex Rivera</h4>
+                    <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Device Logistics</span>
+                    <h4 className="text-xs font-bold text-neutral-200 mt-0.5">Alex Rivera • UK</h4>
                   </div>
-                  <CreditCard className="w-5 h-5 text-neutral-400" />
+                  <Laptop className="w-5 h-5 text-neutral-400" />
                 </div>
                 <div className="mt-8">
-                  <span className="text-[10px] font-medium text-neutral-400">Available Balance</span>
-                  <div className="text-2xl font-black font-logo tracking-tight mt-0.5">$1,469.00</div>
+                  <span className="text-[10px] font-medium text-neutral-400">Shipped Asset</span>
+                  <div className="text-xl font-bold font-logo tracking-tight mt-0.5">MacBook Pro 16" M3</div>
                 </div>
                 <div className="mt-4 flex justify-between items-center text-[10px] font-mono text-neutral-400">
-                  <span>•••• 9012</span>
-                  <span>08/29</span>
+                  <span>DHL Tracking: Active</span>
+                  <span>In Transit</span>
                 </div>
               </div>
 
               {/* Floating badges */}
               <div className="grid grid-cols-2 gap-4">
                 
-                {/* Active Contractors */}
+                {/* Compliance Badge */}
                 <div className="bg-white p-4 rounded-xl border border-neutral-200/60 shadow-sm flex flex-col justify-between">
-                  <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Contractors</span>
+                  <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Compliance</span>
                   <div className="mt-2 flex items-center justify-between">
-                    <span className="text-xl font-bold text-neutral-900">124</span>
-                    <Users className="w-4 h-4 text-neutral-600" />
+                    <span className="text-xl font-bold text-neutral-900">100%</span>
+                    <Shield className="w-4 h-4 text-emerald-500" />
                   </div>
                   <div className="mt-2 flex -space-x-1.5 overflow-hidden">
-                    {[1, 2, 3].map(i => (
-                      <div key={i} className="inline-block h-4 w-4 rounded-full ring-2 ring-white bg-neutral-100 text-[8px] flex items-center justify-center font-bold text-neutral-600">
-                        {i}
-                      </div>
-                    ))}
-                    <div className="inline-block h-4 w-4 rounded-full ring-2 ring-white bg-neutral-900 text-[7px] text-white flex items-center justify-center font-bold">
-                      +
-                    </div>
+                    <span className="text-[8px] font-bold text-neutral-450">All forms verified</span>
                   </div>
                 </div>
 
-                {/* Approved Invoices */}
+                {/* Approved Benefits */}
                 <div className="bg-white p-4 rounded-xl border border-neutral-200/60 shadow-sm flex flex-col justify-between">
-                  <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Invoices</span>
+                  <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Benefits</span>
                   <div className="mt-2 flex items-center justify-between">
-                    <span className="text-xl font-bold text-neutral-900">100%</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    <span className="text-xl font-bold text-neutral-900">Private</span>
+                    <Heart className="w-4 h-4 text-rose-500" />
                   </div>
-                  <span className="mt-2 text-[10px] font-medium text-neutral-500">Fully Audited & Paid</span>
+                  <span className="mt-2 text-[10px] font-medium text-neutral-500">Health Plans Active</span>
                 </div>
 
               </div>
@@ -236,7 +231,7 @@ export default function MarketingHomePage() {
       <section className="py-10 bg-white border-y border-neutral-200/60 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-xs font-bold text-neutral-400 uppercase tracking-widest mb-6 font-mono">
-            Powers compliant contractor payments for global innovators
+            Powers compliant contractor onboarding for global innovators
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 opacity-40">
             {PARTNER_LOGOS.map((logo, idx) => (
@@ -255,59 +250,56 @@ export default function MarketingHomePage() {
         </div>
       </section>
 
-      {/* 3. SECTION 1: PAYMENTS & LOGISTICS */}
+      {/* 3. SECTION 1: ONBOARDING & COMPLIANCE */}
       <section className="py-24 px-6 bg-[#FAF9F6] border-b border-neutral-200/80">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left Column: Smart Pay Card visualizer */}
+          {/* Left Column: Contractor Directory visualizer */}
           <div className="lg:col-span-6 space-y-6">
             <div className="relative p-6 sm:p-8 bg-white border border-neutral-200 rounded-3xl shadow-[0_15px_30px_rgba(0,0,0,0.02)] space-y-6">
               
-              {/* Wallet Header */}
+              {/* Directory Header */}
               <div className="flex items-center justify-between border-b border-neutral-100 pb-4">
                 <div>
-                  <span className="text-[10px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Corporate Ledger</span>
-                  <h3 className="text-lg font-bold text-neutral-800">Zoiee Smart Pay Card</h3>
+                  <span className="text-[10px] font-bold text-neutral-450 uppercase tracking-widest font-mono">HR Directory</span>
+                  <h3 className="text-lg font-bold text-neutral-800">Contractor Profile</h3>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs text-neutral-450">Limit: $50,000</span>
+                  <span className="text-xs text-neutral-450 font-bold">Singapore</span>
                 </div>
               </div>
 
-              {/* Card visual representation */}
+              {/* Profile Card */}
               <div className="bg-neutral-900 rounded-2xl p-6 text-white shadow-sm relative overflow-hidden">
                 <div className="flex justify-between items-start">
-                  <span className="text-xs font-bold font-logo text-neutral-200">ZOIEE</span>
-                  <span className="text-[10px] font-mono text-neutral-400">Debit Card</span>
+                  <span className="text-xs font-bold font-logo text-neutral-200">ZOIEE HR</span>
+                  <span className="text-[10px] font-mono text-neutral-400">ID verified</span>
                 </div>
                 <div className="mt-8 flex justify-between items-end">
                   <div>
-                    <span className="text-[9px] text-neutral-400">Card Balance</span>
-                    <div className="text-3xl font-black font-logo tracking-tight mt-0.5">$16,058.94</div>
+                    <span className="text-[9px] text-neutral-400">Frontend Engineer</span>
+                    <div className="text-2xl font-black font-logo tracking-tight mt-0.5">Marcus Chen</div>
                   </div>
-                  <div className="w-10 h-7 bg-white/10 rounded-lg flex items-center justify-center font-bold text-xs">
-                    VISA
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-sm">
+                    MC
                   </div>
                 </div>
               </div>
 
-              {/* Transactions List */}
+              {/* Onboarding Checklist Status */}
               <div className="space-y-3">
-                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono block">Recent Transactions</span>
-                <div className="space-y-2.5">
+                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono block">Onboarding checklist</span>
+                <div className="space-y-2.5 text-left">
                   {[
-                    { merchant: "GitHub Copilot", category: "Software Development", amount: -19.00, date: "Just now" },
-                    { merchant: "Vercel Pro Tier", category: "Hosting & Cloud", amount: -20.00, date: "1 hour ago" },
-                    { merchant: "Figma Team Plan", category: "Design Tools", amount: -45.00, date: "Yesterday" }
-                  ].map((tx, idx) => (
-                    <div key={idx} className="flex justify-between items-center p-3 hover:bg-neutral-50 rounded-xl transition-colors border border-neutral-100">
-                      <div>
-                        <h4 className="text-xs font-bold text-neutral-800">{tx.merchant}</h4>
-                        <span className="text-[10px] text-neutral-450">{tx.category} • {tx.date}</span>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-xs font-bold text-neutral-800">${Math.abs(tx.amount).toFixed(2)}</span>
-                      </div>
+                    { label: "Signed Global Service Agreement", status: "Done" },
+                    { label: "W-8BEN Tax Form Approved", status: "Done" },
+                    { label: "Singapore Banking Info Verified", status: "Done" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex justify-between items-center p-3 bg-neutral-50 rounded-xl border border-neutral-100">
+                      <span className="text-xs font-semibold text-neutral-700">{item.label}</span>
+                      <span className="text-[9px] bg-emerald-50 text-emerald-700 border border-emerald-100 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                        <Check className="w-3 h-3" /> {item.status}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -318,28 +310,28 @@ export default function MarketingHomePage() {
           {/* Right Column: Copywriting and bullets */}
           <div className="lg:col-span-6 space-y-6 text-left">
             <span className="text-neutral-500 font-extrabold uppercase tracking-widest text-[10px] bg-neutral-900/5 px-3 py-1 rounded-full border border-neutral-900/10">
-              Contractor Logistics
+              Global HR Compliance
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight font-logo">
-              Streamline Sales With Seamless Payments.
+              Streamline Onboarding With Automated Compliance.
             </h2>
             <p className="text-neutral-600 text-sm font-semibold leading-relaxed">
-              Ditch traditional wire transfers and complex spreadsheets. Zoiee consolidates your entire international payroll into a single dashboard. Pay teams instantly, track business expenses with physical and virtual debit cards, and maintain total compliance.
+              Ditch manual paperwork and fragmented email chains. Zoiee consolidates your global workforce onboarding into a single compliant dashboard. Securely draft local contracts, verify identities, collect W-8/W-9 tax classification files, and administer remote benefits.
             </p>
             
             <ul className="space-y-4 pt-4 border-t border-neutral-200/80">
               <li className="flex gap-3">
                 <Check className="w-5 h-5 text-neutral-950 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-neutral-900">Automated Tax Forms & W-8/W-9</h4>
-                  <p className="text-neutral-500 text-xs font-medium mt-0.5">Collect tax identifiers on onboarding and auto-generate year-end 1099 filings.</p>
+                  <h4 className="text-sm font-bold text-neutral-900">Automated Tax Collection</h4>
+                  <p className="text-neutral-500 text-xs font-medium mt-0.5">Automatically prompts remote contractors to submit W-8BEN or W-9 tax forms on onboarding.</p>
                 </div>
               </li>
               <li className="flex gap-3">
                 <Check className="w-5 h-5 text-neutral-950 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-neutral-900">Zero FX Markups & Real Exchange Rates</h4>
-                  <p className="text-neutral-500 text-xs font-medium mt-0.5">Convert currency at standard interbank rates without hidden platform percentages.</p>
+                  <h4 className="text-sm font-bold text-neutral-900">Localized Contract Templates</h4>
+                  <p className="text-neutral-500 text-xs font-medium mt-0.5">Pre-reviewed by local employment attorneys to ensure IP and NDA compliance across 120+ regions.</p>
                 </div>
               </li>
             </ul>
@@ -362,28 +354,28 @@ export default function MarketingHomePage() {
           {/* Left Column: Copywriting and bullets */}
           <div className="lg:col-span-5 space-y-6 text-left">
             <span className="text-neutral-550 font-extrabold uppercase tracking-widest text-[10px] bg-neutral-900/5 px-3 py-1 rounded-full border border-neutral-900/10">
-              Analytics Playground
+              Payroll Analytics
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight font-logo">
-              Sell Smarter With Fast, Secure Payments.
+              Scale Smarter With Automated Payroll & Benefits.
             </h2>
             <p className="text-neutral-600 text-sm font-semibold leading-relaxed">
-              Get an instant audit overview of all contractor invoices, ongoing billing hitches, and payout distributions. Review detailed analytics, toggle currency representations, and monitor payout categories from one central screen.
+              Get an instant audit overview of all contractor payroll allocations, ongoing contract cycles, and benefit distributions. Review detailed analytics, toggle currency representations, and monitor payroll runs from one central screen.
             </p>
             
-            <div className="space-y-4 pt-6 border-t border-neutral-250 text-xs font-semibold">
+            <div className="space-y-4 pt-6 border-t border-neutral-255 text-xs font-semibold">
               <div className="flex gap-3">
                 <Workflow className="w-5 h-5 text-neutral-900 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-neutral-800">Automated Webhooks System</h4>
-                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Deploy webhooks that trigger when invoices are approved, notifying internal ledger databases.</p>
+                  <h4 className="font-bold text-neutral-800">Automated HR Webhooks</h4>
+                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Deploy webhooks that trigger when new contractor accounts pass identity check steps.</p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <Lock className="w-5 h-5 text-neutral-900 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-neutral-800">Compliant Multi-currency Vaults</h4>
-                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Secure currency holds in fully audited local escrow bank accounts before transfer completion.</p>
+                  <h4 className="font-bold text-neutral-800">Secure Personal Data</h4>
+                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Personal identifiers, passport files, and banking directories are encrypted end-to-end.</p>
                 </div>
               </div>
             </div>
@@ -442,15 +434,15 @@ export default function MarketingHomePage() {
             {/* Total value display */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Volume Processed</span>
-                <div className="text-3xl font-black text-neutral-900 mt-1 font-logo">
+                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Payroll Run Volume</span>
+                <div className="text-3xl font-black text-neutral-900 mt-1 font-logo text-left">
                   {currencySymbol}{Math.round(totalPayrollValue).toLocaleString()}
                 </div>
               </div>
               <div>
-                <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest font-mono">Invoice Volume</span>
-                <div className="text-3xl font-black text-neutral-900 mt-1 font-logo">
-                  {totalTransactions} Paid
+                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Active Hires Paid</span>
+                <div className="text-3xl font-black text-neutral-900 mt-1 font-logo text-left">
+                  {totalTransactions} Hires
                 </div>
               </div>
             </div>
@@ -458,9 +450,9 @@ export default function MarketingHomePage() {
             {/* Graph bars visual */}
             <div className="pt-4">
               <div className="flex justify-between items-center text-[9px] text-neutral-400 font-bold uppercase tracking-wider mb-4 font-mono">
-                <span>Distribution Volume Ledger</span>
+                <span>Workforce Payroll Ledger</span>
                 <span className="text-neutral-900 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-black"></span> Real-time Live
+                  <span className="w-1.5 h-1.5 rounded-full bg-black"></span> Active Run
                 </span>
               </div>
               
@@ -490,12 +482,12 @@ export default function MarketingHomePage() {
               {/* Accessible Data Table for Screen Readers */}
               <div className="sr-only">
                 <table>
-                  <caption>Global Contractor Payments Volume</caption>
+                  <caption>Global Contractor Payroll Volume</caption>
                   <thead>
                     <tr>
                       <th scope="col">Period</th>
                       <th scope="col">Volume ({selectedCurrency})</th>
-                      <th scope="col">Transactions</th>
+                      <th scope="col">Active Hires</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -513,12 +505,12 @@ export default function MarketingHomePage() {
             </div>
 
             {/* Footer metrics */}
-            <div className="bg-white p-4 rounded-2xl border border-neutral-250 flex items-center justify-between text-[10px] font-mono font-bold text-neutral-500 shadow-sm">
+            <div className="bg-white p-4 rounded-2xl border border-neutral-250 flex items-center justify-between text-[10px] font-mono font-bold text-neutral-550 shadow-sm">
               <div className="flex items-center gap-2 text-neutral-700">
-                <Clock className="w-3.5 h-3.5 text-neutral-900" /> Automatic invoice syncing active
+                <Clock className="w-3.5 h-3.5 text-neutral-900" /> Automatic timesheet approvals active
               </div>
               <div>
-                Platform FX Margin: <span className="text-emerald-600 font-bold">0.0%</span>
+                Platform SLA Uptime: <span className="text-emerald-600 font-bold">99.99%</span>
               </div>
             </div>
 
@@ -534,10 +526,10 @@ export default function MarketingHomePage() {
               Features System
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 font-logo">
-              Engineered For Compliance.
+              Engineered For Global HR.
             </h2>
             <p className="text-neutral-600 text-sm font-semibold leading-relaxed">
-              We handle onboarding logistics, contractor classifications, health benefits, and banking details. You focus on building global products.
+              We handle onboarding logistics, contractor legal classifications, health benefits, and equipment deliveries. You focus on building global products.
             </p>
           </div>
 
@@ -556,14 +548,14 @@ export default function MarketingHomePage() {
                 badge: "100% Compliant"
               },
               {
-                title: "Real-Time Balance Verification",
-                description: "Instantly verify payroll account funds before kicking off wire transfers, eliminating delayed contractor payouts and administrative bounces.",
-                icon: DollarSign,
-                badge: "Instant Sync"
+                title: "Real-Time Device Logistics",
+                description: "Order, ship, and trace laptops or workspace devices globally. Devices arrive pre-registered with corporate MDM security configurations.",
+                icon: Laptop,
+                badge: "Equipment Portal"
               }
             ].map((feature, idx) => (
               <div key={idx} className="bg-white p-8 rounded-3xl border border-neutral-200/80 shadow-sm flex flex-col justify-between hover:border-neutral-900 transition-colors">
-                <div className="space-y-4">
+                <div className="space-y-4 text-left">
                   <div className="w-10 h-10 rounded-2xl bg-neutral-50 border border-neutral-200/50 flex items-center justify-center">
                     <feature.icon className="w-5 h-5 text-neutral-900" />
                   </div>
@@ -590,37 +582,37 @@ export default function MarketingHomePage() {
               <span className="text-neutral-500 font-extrabold uppercase tracking-widest text-[10px] bg-neutral-900/5 px-3 py-1 rounded-full border border-neutral-900/10">
                 Support & Help
               </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 mt-4 font-logo">
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 mt-4 font-logo text-left">
                 Frequently Asked Questions
               </h2>
-              <p className="text-neutral-600 text-sm font-semibold mt-2">
-                Everything you need to know about contractor payouts, local currency conversions, and tax regulations.
+              <p className="text-neutral-600 text-sm font-semibold mt-2 text-left">
+                Everything you need to know about global hiring compliance, device shipping, and contractor benefits.
               </p>
             </div>
 
             <div className="space-y-4 border-t border-neutral-200/80 pt-6">
               {[
                 { 
-                  q: "How does Zoiee process contractor currency payouts?", 
-                  a: "We support deposits in 80+ local currencies via local banking networks (like SEPA, ACH, Pix, and Faster Payments), avoiding expensive SWIFT wire fees and standard platform exchange markups." 
+                  q: "How does Zoiee onboard international contractors?", 
+                  a: "Contractors submit identity verifications, complete digital W-8BEN or W-9 tax forms, configure bank details, and select localized health benefit coverages in their self-service portal." 
                 },
                 { 
                   q: "How does the automated tax filing system work?", 
                   a: "During self-onboarding, contractors complete digital W-8BEN or W-9 forms. Zoiee tracks payment thresholds throughout the year and automatically generates compliant end-of-year 1099-NEC forms for US-based operations." 
                 },
                 { 
-                  q: "Can we configure multi-currency payroll templates?", 
-                  a: "Yes. Our dashboard allows you to define contractor payment templates grouped by team, department, or location, making it simple to execute batch payrolls across multiple currencies in one click." 
+                  q: "Can we procure and ship equipment through Zoiee?", 
+                  a: "Yes. Our dashboard allows you to order Apple laptops, phones, and peripherals, manage customs declarations globally, and trace deliveries directly to contractor locations." 
                 },
                 { 
                   q: "Is there a custom platform API available?", 
-                  a: "Absolutely. Developers can leverage our REST API and webhook events to programmatically trigger contractor onboardings, invoice validations, and payout deposits." 
+                  a: "Absolutely. Developers can leverage our REST API and webhook events to programmatically trigger contractor onboardings, directory modifications, and hardware registrations." 
                 }
               ].map((faq, idx) => (
                 <div key={idx} className="border-b border-neutral-200 pb-4">
                   <button 
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex justify-between items-center text-left py-2 font-bold text-neutral-850 hover:text-black cursor-pointer"
+                    className="w-full flex justify-between items-center text-left py-2 font-bold text-neutral-855 hover:text-black cursor-pointer"
                   >
                     <span className="text-sm md:text-base">{faq.q}</span>
                     <span className="text-neutral-400 font-normal ml-4 shrink-0">
@@ -650,13 +642,13 @@ export default function MarketingHomePage() {
           <div className="lg:col-span-5 flex items-center">
             <div className="w-full p-8 bg-[#FAF9F6] border border-neutral-200 rounded-3xl space-y-6 text-left shadow-sm">
               <HelpCircle className="w-8 h-8 text-neutral-900" />
-              <h3 className="text-xl font-bold text-neutral-900 leading-tight">Need dedicated custom compliance solutions?</h3>
+              <h3 className="text-xl font-bold text-neutral-900 leading-tight">Need custom global HR compliance solutions?</h3>
               <p className="text-neutral-600 text-xs font-semibold leading-relaxed">
-                Our global payments and legal compliance specialists are available to review contractor agreements, tax structures, and multi-currency payouts for large remote teams.
+                Our global HR specialists and compliance attorneys are available to review contractor contracts, equipment distribution rules, and localized pension plans.
               </p>
               <div className="pt-4">
                 <Link href="/contact" className="w-full text-center px-6 py-3 bg-black hover:bg-neutral-900 text-white font-bold rounded-full text-xs transition-colors inline-block shadow-sm">
-                  Contact Payments Team
+                  Contact HR Specialists
                 </Link>
               </div>
             </div>
@@ -673,16 +665,16 @@ export default function MarketingHomePage() {
         
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight font-logo">
-            Work Intelligently. Pay Independently.
+            Work Intelligently. Hire Globally.
           </h2>
           <p className="text-neutral-400 max-w-xl mx-auto font-medium text-sm sm:text-base leading-relaxed">
-            Create an account today to access automated contractor invoices, global tax withholding forms, and seamless local currency payouts.
+            Create an account today to access automated contractor directories, global W-8/W-9 tax tracking, and integrated equipment logistics.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/contact" className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-neutral-100 text-black font-extrabold rounded-full transition-all text-xs cursor-pointer text-center">
               Request Demo
             </Link>
-            <Link href="/login" className="w-full sm:w-auto px-8 py-3.5 bg-neutral-900 border border-neutral-800 text-neutral-300 font-bold rounded-full hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer text-center text-xs">
+            <Link href="/login" className="w-full sm:w-auto px-8 py-3.5 bg-neutral-900 border border-neutral-800 text-neutral-350 font-bold rounded-full hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer text-center text-xs">
               Log in to Dashboard
             </Link>
           </div>

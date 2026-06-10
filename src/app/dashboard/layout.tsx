@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="h-16 flex items-center px-6 border-b border-neutral-200">
           <div className="flex items-center gap-2.5">
             <span className="w-3 h-3 rounded-full bg-black"></span>
-            <span className="font-bold text-base text-neutral-900 tracking-tight font-logo">Zoiee Payments</span>
+            <span className="font-bold text-base text-neutral-900 tracking-tight font-logo">Zoiee HR</span>
           </div>
         </div>
         
@@ -30,7 +30,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </Link>
           <Link href="/dashboard/time-off" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-neutral-900 transition-colors font-medium border border-transparent">
             <Calendar className="w-4 h-4" />
-            Hitch Planner
+            Time Off
           </Link>
           <Link href="/dashboard/benefits" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-neutral-900 transition-colors font-medium border border-transparent">
             <ShieldPlus className="w-4 h-4" />
@@ -42,7 +42,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </Link>
           <Link href="/dashboard/reports" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-neutral-900 transition-colors font-medium border border-transparent">
             <BarChart className="w-4 h-4" />
-            Treasury Reports
+            Workforce Reports
           </Link>
         </nav>
         

@@ -160,7 +160,7 @@ export function TopNav() {
           <div className="h-16 flex items-center justify-between px-4 border-b border-neutral-200">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-black"></span>
-              <span className="font-bold text-lg text-neutral-900 font-logo">Zoiee Payments</span>
+              <span className="font-bold text-lg text-neutral-900 font-logo">Zoiee HR</span>
             </div>
             <button onClick={() => setIsMobileMenuOpen(false)} className="text-neutral-500 p-1">
               <X className="w-5 h-5" />
@@ -178,7 +178,7 @@ export function TopNav() {
               <CreditCard className="w-4 h-4" /> Global Payroll
             </Link>
             <Link href="/dashboard/time-off" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors font-medium">
-              <Calendar className="w-4 h-4" /> Hitch Planner
+              <Calendar className="w-4 h-4" /> Time Off
             </Link>
             <Link href="/dashboard/benefits" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors font-medium">
               <ShieldPlus className="w-4 h-4" /> Contractor Benefits

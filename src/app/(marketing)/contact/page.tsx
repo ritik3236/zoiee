@@ -184,7 +184,7 @@ export default function ContactPage() {
                     >
                       <option value="Global Contractor Payroll">Global Contractor Payroll</option>
                       <option value="Automated Compliance & Taxes">Automated Compliance & Taxes</option>
-                      <option value="Corporate Smart Cards">Corporate Smart Cards</option>
+                      <option value="IT & Device Logistics">IT & Device Logistics</option>
                       <option value="Custom Enterprise Integration">Custom Enterprise Integration</option>
                     </select>
                   </div>
