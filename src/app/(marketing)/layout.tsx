@@ -30,16 +30,16 @@ export default function MarketingLayout({
                 {/* Left Side: Product Categories */}
                 <div className="flex-[2] p-8 grid grid-cols-2 gap-x-8 gap-y-10">
                   
-                  {/* Contractor Payments & Taxes */}
+                  {/* Contractor Directory & Compliance */}
                   <div>
                     <h4 className="font-bold text-xs text-neutral-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                      <Zap className="w-3 h-3 text-neutral-950" /> Payments & Taxes
+                      <Zap className="w-3 h-3 text-neutral-950" /> Directory & Compliance
                     </h4>
                     <ul className="space-y-2">
                       <li>
                         <Link href="/global-payroll" className="block hover:bg-neutral-50 p-2 -ml-2 rounded-xl transition-colors group/link">
-                          <div className="font-bold text-sm text-neutral-800 group-hover/link:text-black transition-colors">Global Payroll</div>
-                          <div className="text-xs text-neutral-500 font-medium mt-0.5">Automate contractor payments in 120+ countries.</div>
+                          <div className="font-bold text-sm text-neutral-800 group-hover/link:text-black transition-colors">Global Directory</div>
+                          <div className="text-xs text-neutral-500 font-medium mt-0.5">Automate contractor onboarding in 120+ countries.</div>
                         </Link>
                       </li>
                       <li>
@@ -90,8 +90,8 @@ export default function MarketingLayout({
                          <span className="font-bold text-sm text-neutral-800 font-logo">Zoiee Pulse Engine</span>
                        </div>
                     </div>
-                    <h5 className="font-bold text-sm text-neutral-800 group-hover/feature:text-black transition-colors">Smart Invoicing Automation</h5>
-                    <p className="text-xs text-neutral-500 mt-1 font-medium leading-relaxed">Instantly verify timesheets and convert them to compliant payments.</p>
+                    <h5 className="font-bold text-sm text-neutral-800 group-hover/feature:text-black transition-colors">Workforce Compliance Hub</h5>
+                    <p className="text-xs text-neutral-500 mt-1 font-medium leading-relaxed">Instantly verify identity credentials and generate local contractor profiles.</p>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function MarketingLayout({
                 <span className="font-extrabold text-3xl tracking-tight text-black font-logo">Zoiee</span>
               </Link>
               <p className="text-neutral-500 max-w-sm mb-8 font-medium leading-relaxed text-sm">
-                The global workforce layer. Simplify contractor onboarding, compliance, automated global invoicing, and local tax filings.
+                The global workforce layer. Simplify contractor onboarding, compliance directory, and local tax filings.
               </p>
               
               {/* Newsletter */}
@@ -143,7 +143,7 @@ export default function MarketingLayout({
             <div className="col-span-1">
               <h4 className="font-bold text-neutral-400 mb-6 uppercase tracking-widest text-xs">Platform</h4>
               <ul className="space-y-4 text-sm text-neutral-600 font-medium">
-                <li><Link href="/global-payroll" className="hover:text-black hover:translate-x-1 transition-all inline-block">Global Payroll</Link></li>
+                <li><Link href="/global-payroll" className="hover:text-black hover:translate-x-1 transition-all inline-block">Global Directory</Link></li>
                 <li><Link href="/core-hr" className="hover:text-black hover:translate-x-1 transition-all inline-block">Compliance Hub</Link></li>
                 <li><Link href="/zoiee-hire" className="hover:text-black hover:translate-x-1 transition-all inline-block">Zoiee Sourcing</Link></li>
                 <li><Link href="/it-devices" className="hover:text-black hover:translate-x-1 transition-all inline-block">IT & Devices</Link></li>
@@ -154,7 +154,7 @@ export default function MarketingLayout({
             <div className="col-span-1">
               <h4 className="font-bold text-neutral-400 mb-6 uppercase tracking-widest text-xs">Resources</h4>
               <ul className="space-y-4 text-sm text-neutral-600 font-medium">
-                <li><Link href="#" className="hover:text-black hover:translate-x-1 transition-all inline-block">Fintech Blog</Link></li>
+                <li><Link href="#" className="hover:text-black hover:translate-x-1 transition-all inline-block">Workforce Blog</Link></li>
                 <li><Link href="#" className="hover:text-black hover:translate-x-1 transition-all inline-block">Customer Stories</Link></li>
                 <li><Link href="#" className="hover:text-black hover:translate-x-1 transition-all inline-block">Compliance Docs</Link></li>
                 <li><Link href="#" className="hover:text-black hover:translate-x-1 transition-all inline-block">Platform API</Link></li>
@@ -194,7 +194,7 @@ export default function MarketingLayout({
 
         {/* Massive Background Text */}
         <div className="w-full flex justify-center mt-4 md:-mt-8 select-none pointer-events-none opacity-[0.03] overflow-hidden">
-          <h1 className="text-[12vw] leading-none font-bold tracking-tighter whitespace-nowrap text-black font-logo">ZOIEE PAYMENTS</h1>
+          <h1 className="text-[12vw] leading-none font-bold tracking-tighter whitespace-nowrap text-black font-logo">ZOIEE WORKFORCE</h1>
         </div>
       </footer>
     </div>

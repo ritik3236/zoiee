@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Zoiee - Global Contractor Payments & HR Platform",
-  description: "Work intelligently, pay independently. Simplify contractor compliance, global payments, and automated invoicing.",
+  title: "Zoiee - Global Contractor Directory & HR Compliance Platform",
+  description: "Work intelligently, manage independently. Simplify contractor onboarding, workforce directories, and compliance.",
 };
 
 import { Toaster } from 'sonner';

@@ -16,11 +16,11 @@ export default function DirectoryPage() {
     <div className="max-w-6xl mx-auto space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-neutral-900 font-logo">Payee Directory</h1>
+          <h1 className="text-3xl font-extrabold text-neutral-900 font-logo">Workforce Directory</h1>
           <p className="text-neutral-400 font-semibold text-sm">View and manage all active, standby, and pending crew operators.</p>
         </div>
-        <button className="bg-gradient-to-r from-cyan-500 to-violet-500 text-black font-extrabold rounded-lg hover:from-cyan-400 hover:to-violet-400 text-neutral-900 font-bold px-4 py-2.5 rounded transition-colors text-sm cursor-pointer shadow-sm shadow-sm">
-          + Add Payee
+        <button className="bg-black hover:bg-neutral-900 text-white font-bold px-6 py-3 rounded-full transition-colors text-sm cursor-pointer shadow-sm">
+          + Add Contractor
         </button>
       </div>
 
@@ -29,8 +29,8 @@ export default function DirectoryPage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
           <input 
             type="text" 
-            placeholder="Search payees by name or certification..." 
-            className="w-full bg-neutral-50 border border-neutral-200 text-neutral-800 placeholder:text-neutral-500 font-semibold rounded-lg pl-9 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black text-sm"
+            placeholder="Search contractors by name or certification..." 
+            className="w-full bg-neutral-50 border border-neutral-200 text-neutral-800 placeholder:text-neutral-500 font-semibold rounded-full pl-9 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black text-sm"
           />
         </div>
         <div className="flex gap-4">
@@ -52,7 +52,7 @@ export default function DirectoryPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {employees.map((emp) => (
-          <div key={emp.id} className="bg-white rounded-xl border border-neutral-200 p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow relative">
+          <div key={emp.id} className="bg-white rounded-3xl border border-neutral-200 p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow relative">
             <div className="absolute top-4 right-4 bg-green-50 text-green-700 border border-green-200 text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
               <Shield className="w-3 h-3" /> Identity Verified
             </div>
@@ -76,7 +76,7 @@ export default function DirectoryPage() {
               </div>
             </div>
             
-            <button className="mt-6 w-full py-2 border border-neutral-200 hover:border-slate-350 text-neutral-500 rounded text-xs font-bold hover:bg-neutral-50 transition-colors cursor-pointer">
+            <button className="mt-6 w-full py-2.5 border border-neutral-200 hover:border-slate-350 text-neutral-500 rounded-full text-xs font-bold hover:bg-neutral-50 transition-colors cursor-pointer">
               View Compliance Profile
             </button>
           </div>

@@ -6,25 +6,25 @@ import { Users, FileText, Calendar, CheckCircle2, Clock, MapPin, Shield, Server,
 export default function DashboardPage() {
   const activeGateways = [
     {
-      site: "us.ach.gateway",
-      local: "US Dollar (USD)",
-      hitch: "ACH Routing",
+      site: "us.compliance.node",
+      local: "United States (US)",
+      hitch: "Federal W-8/W-9 Audits",
       period: "SLA Uptime: 99.99%",
       progress: 95,
       color: "bg-black"
     },
     {
-      site: "eu.sepa.gateway",
-      local: "Euro (EUR)",
-      hitch: "SEPA Direct Routing",
+      site: "eu.compliance.node",
+      local: "European Union (EU)",
+      hitch: "GDPR Onboarding Rules",
       period: "SLA Uptime: 99.98%",
       progress: 85,
       color: "bg-neutral-800"
     },
     {
-      site: "uk.fps.gateway",
-      local: "Pound Sterling (GBP)",
-      hitch: "Faster Payments Routing",
+      site: "uk.compliance.node",
+      local: "United Kingdom (UK)",
+      hitch: "HMRC Contractor Checks",
       period: "SLA Uptime: 99.99%",
       progress: 75,
       color: "bg-neutral-600"
@@ -47,13 +47,13 @@ export default function DashboardPage() {
         <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-sm relative overflow-hidden">
           <div className="flex justify-between items-start mb-4 relative z-10">
             <div>
-              <div className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-wider mb-1">Total Volume Processed</div>
+              <div className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-wider mb-1">Total Active Contractors</div>
               <div className="text-3xl font-black text-neutral-900 font-logo flex items-baseline gap-2">
-                $44,089 <span className="text-xs text-neutral-450 font-sans">this month</span>
+                124 Hires <span className="text-xs text-neutral-450 font-sans">this month</span>
               </div>
             </div>
             <div className="p-3 bg-neutral-50 text-neutral-700 border border-neutral-200 rounded-2xl">
-              <Landmark className="w-5 h-5" />
+              <Users className="w-5 h-5" />
             </div>
           </div>
           <div className="text-[9px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md w-fit flex items-center gap-0.5">
@@ -65,16 +65,16 @@ export default function DashboardPage() {
         <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-sm relative overflow-hidden">
           <div className="flex justify-between items-start mb-4 relative z-10">
             <div>
-              <div className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-wider mb-1">Pending Disbursements</div>
+              <div className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-wider mb-1">Pending Compliance Tasks</div>
               <div className="text-3xl font-black text-neutral-900 font-logo">
-                $18,200 <span className="text-xs text-neutral-450 font-normal">5 wire transfers</span>
+                5 Audits <span className="text-xs text-neutral-450 font-normal">pending review</span>
               </div>
             </div>
             <div className="p-3 bg-neutral-50 text-neutral-700 border border-neutral-200 rounded-2xl">
               <Clock className="w-5 h-5" />
             </div>
           </div>
-          <div className="text-[9px] font-mono font-bold text-neutral-450">Scheduled for payment run tomorrow</div>
+          <div className="text-[9px] font-mono font-bold text-neutral-450">Scheduled for review queue tomorrow</div>
         </div>
 
         {/* Metric Card 3 */}
@@ -95,12 +95,12 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Active Bank Gateways */}
+        {/* Active compliance Regions */}
         <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-sm flex flex-col justify-between">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-widest flex items-center gap-1.5"><Terminal className="w-4 h-4 text-neutral-900" /> Active Payout Gateways</h2>
+            <h2 className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-widest flex items-center gap-1.5"><Terminal className="w-4 h-4 text-neutral-900" /> Compliance Regions</h2>
             <div className="flex items-center gap-1.5 text-[9px] font-mono text-neutral-700 font-bold bg-neutral-100 border border-neutral-200 px-3 py-1 rounded-full">
-              <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-600" /> API Gateway Online
+              <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-600" /> Compliance Nodes Active
             </div>
           </div>
           <div className="space-y-6 flex-1 flex flex-col justify-center">
@@ -127,16 +127,16 @@ export default function DashboardPage() {
         {/* Access & Audit Logs */}
         <div className="bg-white rounded-3xl border border-neutral-200 shadow-sm flex flex-col overflow-hidden">
           <div className="p-6 border-b border-neutral-200">
-            <h2 className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-widest text-left">Recent Payout Logs</h2>
+            <h2 className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-widest text-left">Recent Compliance Logs</h2>
           </div>
           <div className="flex-1 overflow-auto">
             <table className="w-full text-left border-collapse whitespace-nowrap font-mono text-[10px]">
               <thead>
                 <tr className="bg-neutral-50 text-[9px] font-bold text-neutral-450 border-b border-neutral-200">
                   <th className="p-4 font-bold uppercase tracking-wider">Log Action</th>
-                  <th className="p-4 font-bold uppercase tracking-wider">Gateway Status</th>
+                  <th className="p-4 font-bold uppercase tracking-wider">Verification Status</th>
                   <th className="p-4 font-bold uppercase tracking-wider">Timestamp</th>
-                  <th className="p-4 font-bold uppercase tracking-wider">Payee Country</th>
+                  <th className="p-4 font-bold uppercase tracking-wider">Contractor Region</th>
                 </tr>
               </thead>
               <tbody className="text-neutral-600 divide-y divide-neutral-100">
@@ -153,18 +153,18 @@ export default function DashboardPage() {
                 <tr className="hover:bg-neutral-50">
                   <td className="p-4 text-neutral-900 font-bold flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-neutral-600" /> W-8BEN form audit (Maria G.)</td>
                   <td className="p-4">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-sky-200 bg-sky-50 text-sky-700 font-bold text-[9px]">
-                      RUNNING
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-emerald-250 bg-emerald-50 text-emerald-700 font-bold text-[9px]">
+                      VERIFIED
                     </span>
                   </td>
                   <td className="p-4 text-neutral-400">06:43:02</td>
                   <td className="p-4 text-neutral-500">United Kingdom (GBP)</td>
                 </tr>
                 <tr className="hover:bg-neutral-50">
-                  <td className="p-4 text-neutral-900 font-bold flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-neutral-400" /> Wire release scheduled (James W.)</td>
+                  <td className="p-4 text-neutral-900 font-bold flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-neutral-400" /> Contractor checklist complete (James W.)</td>
                   <td className="p-4">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-neutral-200 bg-neutral-50 text-neutral-500 font-bold text-[9px]">
-                      PENDING
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full border border-emerald-250 bg-emerald-50 text-emerald-700 font-bold text-[9px]">
+                      VERIFIED
                     </span>
                   </td>
                   <td className="p-4 text-neutral-400">06:44:00</td>

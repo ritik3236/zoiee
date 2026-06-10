@@ -28,7 +28,7 @@ export default function ZoieeHirePage() {
       count: 2,
       candidates: [
         { name: "Marcus Chen", role: "Data Engineer", region: "Singapore (SGD)", details: "Identity Check Clear", badge: "Stripe ID Verified" },
-        { name: "Jessica Alva", role: "Compliance Lead", region: "Germany (EUR)", details: "Bank Sync OK", badge: "IBAN Connected" }
+        { name: "Jessica Alva", role: "Compliance Lead", region: "Germany (EUR)", details: "Contract Drafted", badge: "Contract Pending" }
       ]
     },
     {
@@ -40,11 +40,11 @@ export default function ZoieeHirePage() {
       ]
     },
     {
-      title: "Active Payee",
+      title: "Active Contractor",
       count: 2,
       candidates: [
-        { name: "Michael Kim", role: "Fullstack Dev", region: "South Korea (KRW)", details: "Contract Signed", status: "Active Payouts" },
-        { name: "Vilian Garner", role: "Sales Director", region: "Australia (AUD)", details: "Contract Signed", status: "Active Payouts" }
+        { name: "Michael Kim", role: "Fullstack Dev", region: "South Korea (KRW)", details: "Contract Signed", status: "Onboarded" },
+        { name: "Vilian Garner", role: "Sales Director", region: "Australia (AUD)", details: "Contract Signed", status: "Onboarded" }
       ]
     }
   ];
@@ -58,13 +58,13 @@ export default function ZoieeHirePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="text-neutral-500 font-extrabold tracking-widest text-[10px] bg-neutral-900/5 px-3 py-1.5 w-fit rounded-full border border-neutral-900/10 font-mono flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-black"></span> Payee Sourcing & ATS
+              <span className="w-1.5 h-1.5 rounded-full bg-black"></span> Contractor Sourcing & ATS
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-neutral-900 leading-tight font-logo">
               Onboard contractors in record time.
             </h1>
             <p className="text-base text-neutral-600 leading-relaxed font-semibold">
-              An international contractor hiring platform built directly into your payments dashboard. Onboard talent, verify identity credentials, approve tax status, and configure recurring automated payouts.
+              An international contractor hiring platform built directly into your workforce dashboard. Onboard talent, verify identity credentials, approve tax status, and configure recurring automated onboarding checklists.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 bg-black hover:bg-neutral-900 text-white px-8 py-3.5 rounded-full font-bold transition-all text-xs shadow-sm">
               Schedule Sourcing Demo <ArrowRight className="w-4 h-4" />
@@ -76,7 +76,7 @@ export default function ZoieeHirePage() {
             </div>
             <h3 className="font-extrabold text-sm text-neutral-900 font-logo">Identity & Compliance Guarantee</h3>
             <p className="text-neutral-500 font-semibold text-xs leading-relaxed max-w-xs mt-2">
-              Zoiee cross-checks bank account matches, international sanctions lists, and tax status before activating payout accounts.
+              Zoiee cross-checks identity credentials, international compliance checklists, and tax status before activating directory access.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function ZoieeHirePage() {
           <span className="text-neutral-500 font-extrabold uppercase tracking-widest text-[10px] font-mono">Workforce ATS</span>
           <h2 className="text-2xl font-extrabold text-neutral-900 font-logo">Onboarding Pipeline Tracker</h2>
           <p className="text-neutral-500 text-xs font-semibold leading-relaxed max-w-xl">
-            Monitor contractor progress as they complete bank account connections, identity verifications, tax form completions, and enter the active payroll directory.
+            Monitor contractor progress as they complete identity verifications, tax form completions, agreement signings, and enter the active workforce directory.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ export default function ZoieeHirePage() {
             <span className="text-neutral-450 font-extrabold uppercase tracking-widest text-xs font-mono">AUTOMATED ONBOARDING</span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 mb-6 mt-2 font-logo">Hire global talent compliance-first.</h2>
             <p className="text-base text-neutral-600 font-semibold font-sans">
-              Everything you need to onboard, authenticate, sign, and pay overseas team members without legal headaches or paper documents.
+              Everything you need to onboard, authenticate, sign, and manage overseas team members without legal headaches or paper documents.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -143,7 +143,7 @@ export default function ZoieeHirePage() {
               <Users className="w-8 h-8 text-neutral-900 mb-6" />
               <h3 className="text-xl font-bold mb-4 text-neutral-900 font-logo">Self-Service Onboarding</h3>
               <p className="text-neutral-500 leading-relaxed font-semibold text-xs">
-                Contractors submit bank info, complete identity documentation via Stripe Identity, and select payout currencies independently.
+                Contractors submit profile info, complete identity documentation via Stripe Identity, and review contractor agreements independently.
               </p>
             </div>
             <div className="bg-[#FAF9F6] p-8 rounded-3xl border border-neutral-200 hover:border-black transition-colors">
@@ -157,7 +157,7 @@ export default function ZoieeHirePage() {
               <Landmark className="w-8 h-8 text-neutral-900 mb-6" />
               <h3 className="text-xl font-bold mb-4 text-neutral-900 font-logo">Direct Ledger Sync</h3>
               <p className="text-neutral-500 leading-relaxed font-semibold text-xs">
-                Approved contracts and payments sync straight to QuickBooks, Xero, or custom corporate ERP systems via our REST endpoints.
+                Approved contractor profiles and onboarding logs sync straight to Workday, BambooHR, or custom corporate ERP systems via our REST endpoints.
               </p>
             </div>
           </div>

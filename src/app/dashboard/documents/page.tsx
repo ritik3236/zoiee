@@ -10,7 +10,7 @@ export default function DocumentsPage() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
+    <div className="max-w-6xl mx-auto space-y-8 text-left">
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-extrabold text-neutral-900 font-logo">Compliance Vault</h1>
@@ -21,49 +21,53 @@ export default function DocumentsPage() {
           label="Upload Credential" 
           loadingLabel="Uploading..."
           successMessage="Credential document uploaded."
-          className="bg-gradient-to-r from-cyan-500 to-violet-500 text-black font-extrabold rounded-lg hover:from-cyan-400 hover:to-violet-400 text-neutral-900 shadow-sm font-bold text-xs cursor-pointer px-4 py-2.5 rounded"
+          className="bg-black hover:bg-neutral-900 text-white font-extrabold rounded-full text-xs cursor-pointer px-6 py-3 shadow-sm"
         />
       </div>
 
-      <h2 className="text-xs font-bold uppercase tracking-widest text-neutral-500">Credential Folders</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {folders.map((folder, i) => (
-          <div key={i} className="bg-white p-4 rounded-xl border border-neutral-200 shadow-sm flex items-center gap-3 cursor-pointer hover:border-[#ea580c] transition-colors">
-            <Folder className="w-6 h-6 text-neutral-800 fill-[#ea580c]/5" />
-            <span className="font-bold text-xs text-neutral-800">{folder}</span>
-          </div>
-        ))}
+      <div className="space-y-4">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-neutral-500">Credential Folders</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {folders.map((folder, i) => (
+            <div key={i} className="bg-white p-5 rounded-3xl border border-neutral-200 shadow-sm flex items-center gap-3 cursor-pointer hover:border-black transition-colors">
+              <Folder className="w-6 h-6 text-neutral-900 fill-neutral-900/5" />
+              <span className="font-bold text-xs text-neutral-800">{folder}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <h2 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mt-10">Recent Files</h2>
-      <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden shadow-sm">
-        <table className="w-full text-left text-xs border-collapse">
-          <thead className="bg-neutral-50 text-neutral-400 text-xs font-bold border-b border-neutral-200">
-            <tr>
-              <th className="px-6 py-3 font-bold uppercase tracking-wider">File Name</th>
-              <th className="px-6 py-3 font-bold uppercase tracking-wider">Date Modified</th>
-              <th className="px-6 py-3 font-bold uppercase tracking-wider">Size</th>
-              <th className="px-6 py-3"></th>
-            </tr>
-          </thead>
-          <tbody className="text-xs font-semibold text-neutral-500 divide-y divide-slate-100">
-            {files.map((file, i) => (
-              <tr key={i} className="hover:bg-neutral-50/50 transition-colors cursor-pointer">
-                <td className="px-6 py-4 font-bold text-neutral-900 flex items-center gap-3">
-                  <FileText className="w-5 h-5 text-neutral-500" />
-                  {file.name}
-                </td>
-                <td className="px-6 py-4 text-neutral-400 font-semibold">{file.date}</td>
-                <td className="px-6 py-4 text-neutral-400 font-semibold">{file.size}</td>
-                <td className="px-6 py-4 text-right">
-                  <button className="text-neutral-500 hover:text-neutral-500 cursor-pointer">
-                    <MoreVertical className="w-5 h-5" />
-                  </button>
-                </td>
+      <div className="space-y-4 pt-4">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-neutral-500">Recent Files</h2>
+        <div className="bg-white border border-neutral-200 rounded-3xl overflow-hidden shadow-sm">
+          <table className="w-full text-left text-sm border-collapse">
+            <thead className="bg-neutral-50 text-neutral-400 text-xs font-bold border-b border-neutral-200">
+              <tr>
+                <th className="px-6 py-3 font-bold uppercase tracking-wider">File Name</th>
+                <th className="px-6 py-3 font-bold uppercase tracking-wider">Date Modified</th>
+                <th className="px-6 py-3 font-bold uppercase tracking-wider">Size</th>
+                <th className="px-6 py-3"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="text-xs font-semibold text-neutral-500 divide-y divide-slate-100">
+              {files.map((file, i) => (
+                <tr key={i} className="hover:bg-neutral-50/50 transition-colors cursor-pointer">
+                  <td className="px-6 py-4 font-bold text-neutral-900 flex items-center gap-3">
+                    <FileText className="w-5 h-5 text-neutral-500" />
+                    {file.name}
+                  </td>
+                  <td className="px-6 py-4 text-neutral-400 font-semibold">{file.date}</td>
+                  <td className="px-6 py-4 text-neutral-400 font-semibold">{file.size}</td>
+                  <td className="px-6 py-4 text-right">
+                    <button className="text-neutral-500 hover:text-neutral-800 cursor-pointer">
+                      <MoreVertical className="w-5 h-5 text-neutral-900" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

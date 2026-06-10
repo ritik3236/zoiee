@@ -22,11 +22,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </Link>
           <Link href="/dashboard/directory" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-neutral-900 transition-colors font-medium border border-transparent">
             <Users className="w-4 h-4" />
-            Payees Directory
+            Workforce Directory
           </Link>
           <Link href="/dashboard/payroll" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-neutral-900 transition-colors font-medium border border-transparent">
-            <CreditCard className="w-4 h-4" />
-            Global Payroll
+            <FileText className="w-4 h-4" />
+            CBA Compliance
           </Link>
           <Link href="/dashboard/time-off" className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-neutral-900 transition-colors font-medium border border-transparent">
             <Calendar className="w-4 h-4" />

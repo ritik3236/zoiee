@@ -14,7 +14,6 @@ import {
   Workflow, 
   Sparkles, 
   Server, 
-  DollarSign, 
   ArrowUpRight, 
   TrendingDown, 
   Layers, 
@@ -23,14 +22,12 @@ import {
   ArrowRightLeft,
   Users,
   FileText,
-  CreditCard,
-  Percent,
-  PlusCircle,
   HelpCircle,
   Menu,
   ChevronDown,
   Laptop,
-  Heart
+  Heart,
+  UserCheck
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -44,44 +41,43 @@ const PARTNER_LOGOS = [
   { name: "Netflix", domain: "netflix.com" }
 ];
 
-const ANALYTICS_DATA = {
+const WORKFORCE_DATA = {
   weekly: [
-    { label: "Mon", amount: 12400, transactions: 14 },
-    { label: "Tue", amount: 18900, transactions: 22 },
-    { label: "Wed", amount: 15600, transactions: 19 },
-    { label: "Thu", amount: 28400, transactions: 35 },
-    { label: "Fri", amount: 22100, transactions: 29 },
-    { label: "Sat", amount: 9800, transactions: 10 },
-    { label: "Sun", amount: 14500, transactions: 12 }
+    { label: "Mon", headcount: 112, onboarded: 95 },
+    { label: "Tue", headcount: 115, onboarded: 98 },
+    { label: "Wed", headcount: 118, onboarded: 102 },
+    { label: "Thu", headcount: 120, onboarded: 108 },
+    { label: "Fri", headcount: 124, onboarded: 114 },
+    { label: "Sat", headcount: 124, onboarded: 114 },
+    { label: "Sun", headcount: 124, onboarded: 114 }
   ],
   monthly: [
-    { label: "Week 1", amount: 78000, transactions: 110 },
-    { label: "Week 2", amount: 92000, transactions: 145 },
-    { label: "Week 3", amount: 115000, transactions: 190 },
-    { label: "Week 4", amount: 84000, transactions: 130 }
+    { label: "Week 1", headcount: 102, onboarded: 88 },
+    { label: "Week 2", headcount: 108, onboarded: 94 },
+    { label: "Week 3", headcount: 115, onboarded: 102 },
+    { label: "Week 4", headcount: 124, onboarded: 114 }
   ],
   annual: [
-    { label: "Q1", amount: 280000, transactions: 420 },
-    { label: "Q2", amount: 340000, transactions: 510 },
-    { label: "Q3", amount: 410000, transactions: 630 },
-    { label: "Q4", amount: 390000, transactions: 580 }
+    { label: "Q1", headcount: 82, onboarded: 70 },
+    { label: "Q2", headcount: 96, onboarded: 84 },
+    { label: "Q3", headcount: 110, onboarded: 98 },
+    { label: "Q4", headcount: 124, onboarded: 114 }
   ]
 };
 
 export default function MarketingHomePage() {
   const [analyticsTab, setAnalyticsTab] = useState<"weekly" | "monthly" | "annual">("weekly");
-  const [selectedCurrency, setSelectedCurrency] = useState<"USD" | "EUR" | "GBP">("USD");
+  const [selectedDept, setSelectedDept] = useState<"engineering" | "design" | "marketing">("engineering");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  // Currency multiplier
-  const currencySymbol = selectedCurrency === "USD" ? "$" : selectedCurrency === "EUR" ? "€" : "£";
-  const currencyRate = selectedCurrency === "USD" ? 1 : selectedCurrency === "EUR" ? 0.92 : 0.78;
+  // Department headcount multiplier
+  const deptMultiplier = selectedDept === "engineering" ? 0.6 : selectedDept === "design" ? 0.25 : 0.15;
 
-  const currentAnalytics = ANALYTICS_DATA[analyticsTab];
-  const maxAmount = Math.max(...currentAnalytics.map(d => d.amount));
+  const currentAnalytics = WORKFORCE_DATA[analyticsTab];
+  const maxHeadcount = Math.max(...currentAnalytics.map(d => d.headcount));
   
-  const totalPayrollValue = currentAnalytics.reduce((acc, curr) => acc + curr.amount, 0) * currencyRate;
-  const totalTransactions = currentAnalytics.reduce((acc, curr) => acc + curr.transactions, 0);
+  const activeHeadcount = Math.round(currentAnalytics[currentAnalytics.length - 1].headcount * deptMultiplier);
+  const onboardedPercentage = Math.round((currentAnalytics[currentAnalytics.length - 1].onboarded / currentAnalytics[currentAnalytics.length - 1].headcount) * 100);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -110,12 +106,12 @@ export default function MarketingHomePage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-neutral-900 font-logo">
               Work Intelligently.<br />
               <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-500 bg-clip-text text-transparent">
-                Hire Globally.
+                Onboard Globally.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-medium max-w-xl">
-              The automated contractor onboarding, local compliance, and global payroll platform built for modern remote teams. Hire, verify tax forms, and distribute hardware devices instantly.
+              The automated contractor onboarding, local compliance, and device logistics system built for remote-first teams. Manage profiles, verify W-8/W-9 files, and ship work laptops instantly.
             </p>
 
             {/* Checklist */}
@@ -126,11 +122,11 @@ export default function MarketingHomePage() {
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-neutral-950 shrink-0" />
-                <span>Auto-collection of W-8/W-9 tax forms and localized filings</span>
+                <span>Auto-collection of W-8/W-9 tax forms and compliance checks</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-neutral-950 shrink-0" />
-                <span>Integrated equipment shipping (MacBooks, phones) & MDM setup</span>
+                <span>Integrated equipment shipping (MacBooks, phones) & return logistics</span>
               </div>
             </div>
 
@@ -147,7 +143,7 @@ export default function MarketingHomePage() {
             {/* Trust badge */}
             <div className="pt-6 flex items-center gap-4 text-xs font-semibold text-neutral-450 border-t border-neutral-200/60 max-w-lg">
               <span className="uppercase tracking-widest text-[9px] font-bold font-mono bg-neutral-150 px-2 py-0.5 rounded-md text-neutral-500">ZOIEE HR</span>
-              <span>Powering compliant contractor directory scaling and benefits worldwide.</span>
+              <span>Powering compliant contractor directory scaling and workspace devices globally.</span>
             </div>
           </div>
 
@@ -161,20 +157,20 @@ export default function MarketingHomePage() {
               
               {/* Card 1: Active Hires */}
               <div className="bg-white p-5 rounded-2xl border border-neutral-200/60 shadow-sm relative overflow-hidden group hover:border-neutral-900 transition-colors">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Active Hires</span>
+                <div className="flex items-center justify-between text-left">
+                  <span className="text-[10px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Workforce Directory</span>
                   <span className="text-emerald-600 bg-emerald-50 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-0.5">
                     <TrendingUp className="w-3 h-3" /> +12.4%
                   </span>
                 </div>
                 <div className="mt-3 flex items-baseline gap-2">
                   <h3 className="text-3xl font-extrabold text-neutral-900 tracking-tight font-logo">124</h3>
-                  <span className="text-xs text-neutral-500 font-medium">Contractors</span>
+                  <span className="text-xs text-neutral-500 font-medium">Active Hires</span>
                 </div>
-                <p className="mt-2 text-xs text-neutral-450 font-medium">Verified W-8/W-9 directory members onboarded.</p>
+                <p className="mt-2 text-xs text-neutral-455 font-medium text-left">Fully verified W-8/W-9 directory members onboarded.</p>
               </div>
 
-              {/* Card 2: Equipment Logistics Card */}
+              {/* Card 2: Device Logistics Card */}
               <div className="bg-gradient-to-tr from-neutral-900 to-neutral-850 p-6 rounded-2xl text-white shadow-md relative overflow-hidden group hover:scale-[1.01] transition-transform">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full translate-x-8 -translate-y-8" />
                 <div className="flex justify-between items-start">
@@ -184,7 +180,7 @@ export default function MarketingHomePage() {
                   </div>
                   <Laptop className="w-5 h-5 text-neutral-400" />
                 </div>
-                <div className="mt-8">
+                <div className="mt-8 text-left">
                   <span className="text-[10px] font-medium text-neutral-400">Shipped Asset</span>
                   <div className="text-xl font-bold font-logo tracking-tight mt-0.5">MacBook Pro 16" M3</div>
                 </div>
@@ -276,7 +272,7 @@ export default function MarketingHomePage() {
                   <span className="text-[10px] font-mono text-neutral-400">ID verified</span>
                 </div>
                 <div className="mt-8 flex justify-between items-end">
-                  <div>
+                  <div className="text-left">
                     <span className="text-[9px] text-neutral-400">Frontend Engineer</span>
                     <div className="text-2xl font-black font-logo tracking-tight mt-0.5">Marcus Chen</div>
                   </div>
@@ -316,7 +312,7 @@ export default function MarketingHomePage() {
               Streamline Onboarding With Automated Compliance.
             </h2>
             <p className="text-neutral-600 text-sm font-semibold leading-relaxed">
-              Ditch manual paperwork and fragmented email chains. Zoiee consolidates your global workforce onboarding into a single compliant dashboard. Securely draft local contracts, verify identities, collect W-8/W-9 tax classification files, and administer remote benefits.
+              Ditch manual paperwork and fragmented email chains. Zoiee consolidates your remote team directory, legal documents, and laptop shipments in one central HR portal. Securely draft local contracts, verify identities, collect W-8/W-9 tax classification files, and administer remote benefits.
             </p>
             
             <ul className="space-y-4 pt-4 border-t border-neutral-200/80">
@@ -353,29 +349,29 @@ export default function MarketingHomePage() {
           
           {/* Left Column: Copywriting and bullets */}
           <div className="lg:col-span-5 space-y-6 text-left">
-            <span className="text-neutral-550 font-extrabold uppercase tracking-widest text-[10px] bg-neutral-900/5 px-3 py-1 rounded-full border border-neutral-900/10">
-              Payroll Analytics
+            <span className="text-neutral-555 font-extrabold uppercase tracking-widest text-[10px] bg-neutral-900/5 px-3 py-1 rounded-full border border-neutral-900/10">
+              HR Analytics
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight font-logo">
-              Scale Smarter With Automated Payroll & Benefits.
+              Scale Smarter With Automated HR Analytics.
             </h2>
             <p className="text-neutral-600 text-sm font-semibold leading-relaxed">
-              Get an instant audit overview of all contractor payroll allocations, ongoing contract cycles, and benefit distributions. Review detailed analytics, toggle currency representations, and monitor payroll runs from one central screen.
+              Get an instant overview of department growth, onboarding progress, and benefit registrations. Review detailed analytics, filter by department, and track your global directory growth.
             </p>
             
             <div className="space-y-4 pt-6 border-t border-neutral-255 text-xs font-semibold">
               <div className="flex gap-3">
                 <Workflow className="w-5 h-5 text-neutral-900 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-neutral-800">Automated HR Webhooks</h4>
-                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Deploy webhooks that trigger when new contractor accounts pass identity check steps.</p>
+                  <h4 className="font-bold text-neutral-800">Onboarding Webhooks</h4>
+                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Trigger customized welcome streams or workspace shipments when new hires complete their identity verifications.</p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <Lock className="w-5 h-5 text-neutral-900 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-neutral-800">Secure Personal Data</h4>
-                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Personal identifiers, passport files, and banking directories are encrypted end-to-end.</p>
+                  <h4 className="font-bold text-neutral-800">Secure Profile Data</h4>
+                  <p className="text-neutral-500 font-medium leading-relaxed mt-0.5">Secure storage of passport files, bank details, and W-8/W-9 compliance tax forms.</p>
                 </div>
               </div>
             </div>
@@ -408,23 +404,23 @@ export default function MarketingHomePage() {
                 ))}
               </div>
 
-              {/* Currency Selector */}
+              {/* Department Selector */}
               <div className="flex gap-2">
                 {[
-                  { id: "USD", label: "USD ($)" },
-                  { id: "EUR", label: "EUR (€)" },
-                  { id: "GBP", label: "GBP (£)" }
-                ].map(curr => (
+                  { id: "engineering", label: "Engineering" },
+                  { id: "design", label: "Design" },
+                  { id: "marketing", label: "Marketing" }
+                ].map(dept => (
                   <button
-                    key={curr.id}
-                    onClick={() => setSelectedCurrency(curr.id as any)}
-                    className={`text-[10px] font-mono px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer font-bold ${
-                      selectedCurrency === curr.id
+                    key={dept.id}
+                    onClick={() => setSelectedDept(dept.id as any)}
+                    className={`text-[10px] px-3 py-1.5 rounded-full border transition-all cursor-pointer font-bold uppercase ${
+                      selectedDept === dept.id
                         ? "bg-white text-black border-neutral-800 shadow-sm"
                         : "bg-transparent text-neutral-500 border-neutral-200 hover:text-black"
                     }`}
                   >
-                    {curr.label}
+                    {dept.label}
                   </button>
                 ))}
               </div>
@@ -434,15 +430,15 @@ export default function MarketingHomePage() {
             {/* Total value display */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Payroll Run Volume</span>
+                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono block text-left">Active Headcount</span>
                 <div className="text-3xl font-black text-neutral-900 mt-1 font-logo text-left">
-                  {currencySymbol}{Math.round(totalPayrollValue).toLocaleString()}
+                  {activeHeadcount} Hires
                 </div>
               </div>
               <div>
-                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono">Active Hires Paid</span>
+                <span className="text-[9px] font-bold text-neutral-450 uppercase tracking-widest font-mono block text-left">Onboarding Complete</span>
                 <div className="text-3xl font-black text-neutral-900 mt-1 font-logo text-left">
-                  {totalTransactions} Hires
+                  {onboardedPercentage}% Done
                 </div>
               </div>
             </div>
@@ -450,21 +446,22 @@ export default function MarketingHomePage() {
             {/* Graph bars visual */}
             <div className="pt-4">
               <div className="flex justify-between items-center text-[9px] text-neutral-400 font-bold uppercase tracking-wider mb-4 font-mono">
-                <span>Workforce Payroll Ledger</span>
+                <span>Workforce Directory Growth</span>
                 <span className="text-neutral-900 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-black"></span> Active Run
+                  <span className="w-1.5 h-1.5 rounded-full bg-black"></span> Active Sync
                 </span>
               </div>
               
               <div className="flex gap-2 sm:gap-4 items-end h-48 w-full px-1 border-b border-neutral-200">
                 {currentAnalytics.map((data, idx) => {
-                  const barHeightPercent = (data.amount / maxAmount) * 100;
+                  const currentDeptCount = Math.round(data.headcount * deptMultiplier);
+                  const barHeightPercent = (currentDeptCount / Math.round(maxHeadcount * deptMultiplier)) * 100;
                   return (
                     <div key={idx} className="flex-1 flex flex-col items-center gap-2">
                       <div className="relative w-full group flex justify-center">
                         {/* Tooltip on hover */}
                         <div className="absolute bottom-full mb-2 bg-neutral-900 text-white text-[9px] font-mono font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-sm">
-                          {currencySymbol}{Math.round(data.amount * currencyRate).toLocaleString()}
+                          {currentDeptCount} Members
                         </div>
                         <div 
                           className="w-full bg-neutral-900 rounded-t-lg hover:bg-neutral-800 transition-colors cursor-pointer" 
@@ -482,20 +479,20 @@ export default function MarketingHomePage() {
               {/* Accessible Data Table for Screen Readers */}
               <div className="sr-only">
                 <table>
-                  <caption>Global Contractor Payroll Volume</caption>
+                  <caption>Global Contractor Onboarding Growth</caption>
                   <thead>
                     <tr>
                       <th scope="col">Period</th>
-                      <th scope="col">Volume ({selectedCurrency})</th>
-                      <th scope="col">Active Hires</th>
+                      <th scope="col">Headcount ({selectedDept})</th>
+                      <th scope="col">Onboarded</th>
                     </tr>
                   </thead>
                   <tbody>
                     {currentAnalytics.map((data, idx) => (
                       <tr key={idx}>
                         <td>{data.label}</td>
-                        <td>{currencySymbol}{Math.round(data.amount * currencyRate).toLocaleString()}</td>
-                        <td>{data.transactions}</td>
+                        <td>{Math.round(data.headcount * deptMultiplier)}</td>
+                        <td>{Math.round(data.onboarded * deptMultiplier)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -505,9 +502,9 @@ export default function MarketingHomePage() {
             </div>
 
             {/* Footer metrics */}
-            <div className="bg-white p-4 rounded-2xl border border-neutral-250 flex items-center justify-between text-[10px] font-mono font-bold text-neutral-550 shadow-sm">
+            <div className="bg-white p-4 rounded-2xl border border-neutral-250 flex items-center justify-between text-[10px] font-mono font-bold text-neutral-555 shadow-sm">
               <div className="flex items-center gap-2 text-neutral-700">
-                <Clock className="w-3.5 h-3.5 text-neutral-900" /> Automatic timesheet approvals active
+                <Clock className="w-3.5 h-3.5 text-neutral-900" /> Automatic W-8/W-9 updates active
               </div>
               <div>
                 Platform SLA Uptime: <span className="text-emerald-600 font-bold">99.99%</span>
@@ -537,13 +534,13 @@ export default function MarketingHomePage() {
             {[
               {
                 title: "Secure Contractor Portal",
-                description: "Onboard remote contractors with pre-vetted legal contracts, bank deposit verifications, and automated W-8/W-9 tax classification pipelines.",
+                description: "Onboard remote contractors with pre-vetted legal contracts, profile listings, and automated W-8/W-9 tax classification pipelines.",
                 icon: Shield,
                 badge: "Legal Guard"
               },
               {
                 title: "Global Tax Compliance",
-                description: "Local country tax rules, VAT/GST tracking, and automated year-end filings. Seamlessly export structured 1099 datasets directly to QuickBooks or Xero.",
+                description: "Local country tax rules, VAT/GST tracking, and automated year-end filings. Seamlessly export structured contractor datasets directly to QuickBooks or Xero.",
                 icon: FileText,
                 badge: "100% Compliant"
               },
@@ -597,8 +594,8 @@ export default function MarketingHomePage() {
                   a: "Contractors submit identity verifications, complete digital W-8BEN or W-9 tax forms, configure bank details, and select localized health benefit coverages in their self-service portal." 
                 },
                 { 
-                  q: "How does the automated tax filing system work?", 
-                  a: "During self-onboarding, contractors complete digital W-8BEN or W-9 forms. Zoiee tracks payment thresholds throughout the year and automatically generates compliant end-of-year 1099-NEC forms for US-based operations." 
+                  q: "How does the automated tax compliance work?", 
+                  a: "During self-onboarding, contractors complete digital W-8BEN or W-9 forms. Zoiee tracks reporting thresholds throughout the year and automatically generates compliant end-of-year 1099-NEC forms for US-based operations." 
                 },
                 { 
                   q: "Can we procure and ship equipment through Zoiee?", 
@@ -665,7 +662,7 @@ export default function MarketingHomePage() {
         
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight font-logo">
-            Work Intelligently. Hire Globally.
+            Work Intelligently. Onboard Globally.
           </h2>
           <p className="text-neutral-400 max-w-xl mx-auto font-medium text-sm sm:text-base leading-relaxed">
             Create an account today to access automated contractor directories, global W-8/W-9 tax tracking, and integrated equipment logistics.
@@ -674,7 +671,7 @@ export default function MarketingHomePage() {
             <Link href="/contact" className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-neutral-100 text-black font-extrabold rounded-full transition-all text-xs cursor-pointer text-center">
               Request Demo
             </Link>
-            <Link href="/login" className="w-full sm:w-auto px-8 py-3.5 bg-neutral-900 border border-neutral-800 text-neutral-350 font-bold rounded-full hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer text-center text-xs">
+            <Link href="/login" className="w-full sm:w-auto px-8 py-3.5 bg-neutral-900 border border-neutral-880 text-neutral-300 font-bold rounded-full hover:bg-neutral-800 hover:text-white transition-colors cursor-pointer text-center text-xs">
               Log in to Dashboard
             </Link>
           </div>

@@ -11,7 +11,7 @@ export default function ContactPage() {
     email: "",
     company: "",
     companySize: "",
-    topic: "Global Contractor Payroll",
+    topic: "Global Contractor Directory",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +27,7 @@ export default function ContactPage() {
     setIsSubmitting(false);
     setIsSuccess(true);
     toast.success("Message received!", {
-      description: "Our payments team will email you shortly.",
+      description: "Our HR compliance team will email you shortly.",
     });
   };
 
@@ -52,7 +52,7 @@ export default function ContactPage() {
             Get in touch
           </h1>
           <p className="text-base text-neutral-600 max-w-2xl font-medium">
-            Contact our workforce payment specialists to request custom compliance setups, sandbox integrations, or custom enterprise terms.
+            Contact our HR compliance specialists to request custom directory setups or custom enterprise terms.
           </p>
         </div>
       </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <span className="text-[10px] font-mono font-bold text-neutral-450 uppercase tracking-widest">Global Nodes</span>
             <h2 className="text-2xl font-extrabold text-neutral-900 font-logo">Zoiee Network Gateway</h2>
             <p className="text-neutral-500 text-xs font-semibold leading-relaxed">
-              We operate multi-currency ledger nodes across key financial centers to execute compliant contractor payouts globally.
+              We operate local compliance nodes across key regions to verify and manage global workforce compliance.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function ContactPage() {
                 >
                   <h2 className="text-xl font-bold text-neutral-900 tracking-tight font-logo">Submit Inquiry</h2>
                   <p className="text-neutral-500 text-xs font-semibold mb-6">
-                    Fill out the request form below and one of our payments managers will follow up.
+                    Fill out the request form below and one of our HR onboarding managers will follow up.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -182,7 +182,7 @@ export default function ContactPage() {
                       onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-neutral-700 font-semibold text-sm appearance-none cursor-pointer focus:outline-none focus:border-black"
                     >
-                      <option value="Global Contractor Payroll">Global Contractor Payroll</option>
+                      <option value="Global Contractor Directory">Global Contractor Directory</option>
                       <option value="Automated Compliance & Taxes">Automated Compliance & Taxes</option>
                       <option value="IT & Device Logistics">IT & Device Logistics</option>
                       <option value="Custom Enterprise Integration">Custom Enterprise Integration</option>
@@ -199,7 +199,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-neutral-900 font-semibold text-sm resize-none focus:outline-none focus:border-black focus:ring-1 focus:ring-black placeholder:text-neutral-400"
-                      placeholder="We want to automate payments and tax forms for 50 remote developers using Zoiee..."
+                      placeholder="We want to automate onboarding and tax forms for 50 remote developers using Zoiee..."
                     ></textarea>
                   </div>
 
@@ -228,7 +228,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <h3 className="text-3xl font-extrabold text-neutral-900 font-logo">Message Sent!</h3>
                     <p className="text-neutral-500 font-medium text-base leading-relaxed max-w-sm mx-auto">
-                      Thank you, {formData.name}. Our global payment consultants will review your inquiry and follow up shortly.
+                      Thank you, {formData.name}. Our compliance onboarding consultants will review your inquiry and follow up shortly.
                     </p>
                   </div>
                   <button

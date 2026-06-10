@@ -51,8 +51,8 @@ export function TopNav() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={handleSearch}
-            placeholder="Search payments, payees, and transactions..." 
-            className="w-full bg-neutral-55 border border-neutral-200 rounded-xl pl-4 pr-10 py-1.5 text-xs focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-neutral-900 placeholder:text-neutral-400"
+            placeholder="Search contractors, compliance, and logs..." 
+            className="w-full bg-neutral-55 border border-neutral-200 rounded-full pl-4 pr-10 py-1.5 text-xs focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-neutral-900 placeholder:text-neutral-400"
           />
         </div>
       </div>
@@ -71,15 +71,15 @@ export function TopNav() {
           {isNotifOpen && (
             <div className="absolute right-0 mt-3 w-80 bg-white border border-neutral-200 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] z-50 overflow-hidden text-left">
               <div className="p-4 border-b border-neutral-200 flex justify-between items-center bg-neutral-50">
-                <h3 className="font-bold text-xs text-neutral-850 uppercase tracking-wider">Gateway Alerts</h3>
+                <h3 className="font-bold text-xs text-neutral-855 uppercase tracking-wider">Compliance Alerts</h3>
                 <span className="text-[10px] text-neutral-900 font-bold cursor-pointer hover:underline">Clear all</span>
               </div>
               <div className="max-h-80 overflow-y-auto divide-y divide-neutral-100">
                 <div className="p-4 hover:bg-neutral-50 transition-colors cursor-pointer flex gap-3">
                   <div className="mt-0.5"><CheckCircle className="w-4 h-4 text-emerald-600" /></div>
                   <div className="space-y-0.5">
-                    <p className="text-xs font-bold text-neutral-900">Zoiee Payroll Sync Complete</p>
-                    <p className="text-[10px] text-neutral-500 leading-relaxed font-semibold">USD batch payouts completed successfully across 3 active wire pools.</p>
+                    <p className="text-xs font-bold text-neutral-900">Zoiee Roster Sync Complete</p>
+                    <p className="text-[10px] text-neutral-500 leading-relaxed font-semibold">Workforce directory sync completed successfully across 3 active compliance regions.</p>
                     <p className="text-[9px] text-neutral-400 font-mono">2m ago</p>
                   </div>
                 </div>
@@ -172,10 +172,10 @@ export function TopNav() {
               <LayoutDashboard className="w-4 h-4" /> Dashboard
             </Link>
             <Link href="/dashboard/directory" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors font-medium">
-              <Users className="w-4 h-4" /> Payees Directory
+              <Users className="w-4 h-4" /> Workforce Directory
             </Link>
             <Link href="/dashboard/payroll" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors font-medium">
-              <CreditCard className="w-4 h-4" /> Global Payroll
+              <FileText className="w-4 h-4" /> CBA Compliance
             </Link>
             <Link href="/dashboard/time-off" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors font-medium">
               <Calendar className="w-4 h-4" /> Time Off
@@ -187,7 +187,7 @@ export function TopNav() {
               <FileText className="w-4 h-4" /> W-8/W-9 Vault
             </Link>
             <Link href="/dashboard/reports" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-neutral-50 hover:text-black transition-colors font-medium">
-              <BarChart className="w-4 h-4" /> Treasury Reports
+              <BarChart className="w-4 h-4" /> Workforce Reports
             </Link>
           </nav>
         </div>

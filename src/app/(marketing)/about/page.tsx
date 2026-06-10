@@ -14,7 +14,7 @@ export default function AboutPage() {
             We believe global contractor hiring shouldn't be so hard.
           </h1>
           <p className="text-base text-neutral-600 leading-relaxed max-w-3xl mx-auto font-semibold">
-            Zoiee was founded out of sheer frustration with manual overseas payroll and legal compliance bottlenecks. We realized that hiring companies were using fragmented spreadsheets, localized banks, and manual tax form tracking just to pay remote contractors. By building a unified, automated global workforce layer, we ensure remote teams can work intelligently and pay independently.
+            Zoiee was founded out of sheer frustration with manual overseas contractor onboarding and legal compliance bottlenecks. We realized that hiring companies were using fragmented spreadsheets, disconnected tools, and manual tax form tracking just to manage remote contractors. By building a unified, automated global workforce layer, we ensure remote teams can work intelligently and manage directories independently.
           </p>
           <div className="flex justify-center gap-4 pt-2">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-black hover:bg-neutral-900 text-white px-8 py-3.5 rounded-full font-bold transition-all text-xs shadow-sm">
@@ -33,7 +33,7 @@ export default function AboutPage() {
           <div className="text-center mb-20 max-w-3xl mx-auto space-y-4">
             <span className="text-neutral-450 font-extrabold uppercase tracking-widest text-xs font-mono font-bold">GUIDING PRINCIPLES</span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900 font-logo">Our Core Values</h2>
-            <p className="text-base text-neutral-600 font-semibold">The standards that guide every payroll batch, identity audit, and contract we authorize.</p>
+            <p className="text-base text-neutral-600 font-semibold">The standards that guide every onboarding, identity audit, and contract directory we authorize.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#FAF9F6] p-8 rounded-3xl border border-neutral-200 hover:border-black transition-colors">
@@ -47,14 +47,14 @@ export default function AboutPage() {
               <Users className="w-8 h-8 text-neutral-900 mb-6" />
               <h3 className="text-xl font-bold mb-4 text-neutral-900 font-logo">Contractor-Centric</h3>
               <p className="text-neutral-500 leading-relaxed font-semibold text-xs">
-                Remote contractors are the lifeblood of modern tech companies. We build software that respects their local banking preferences, pays them on time, and simplifies their tax experience.
+                Remote contractors are the lifeblood of modern tech companies. We build software that respects their local compliance, works seamlessly across timezones, and simplifies their tax experience.
               </p>
             </div>
             <div className="bg-[#FAF9F6] p-8 rounded-3xl border border-neutral-200 hover:border-black transition-colors">
               <Compass className="w-8 h-8 text-neutral-900 mb-6" />
               <h3 className="text-xl font-bold mb-4 text-neutral-900 font-logo">Frictionless UX</h3>
               <p className="text-neutral-500 leading-relaxed font-semibold text-xs">
-                No complex corporate onboarding cycles or confusing portals. Zoiee features clean interfaces, fast payouts, and simple contract executions.
+                No complex corporate onboarding cycles or confusing portals. Zoiee features clean interfaces, automated verifications, and simple contract executions.
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             Onboard global contractors with confidence.
           </h2>
           <p className="text-sm text-neutral-400 max-w-xl mx-auto leading-relaxed font-medium">
-            Join thousands of modern operations managing compliance, laptops, and payroll globally under Zoiee.
+            Join thousands of modern operations managing compliance, laptops, and contractor directories globally under Zoiee.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/contact" className="w-full sm:w-auto bg-white hover:bg-neutral-100 text-black font-extrabold px-8 py-3.5 rounded-full shadow-sm text-xs">
